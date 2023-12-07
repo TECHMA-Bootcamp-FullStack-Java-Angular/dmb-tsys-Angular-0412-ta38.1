@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="col-5 mx-auto">
+    <h1 class="mt-4">Formulario de contacto</h1>
+    <form [formGroup]="formLoging" (submit)="send()">
+      <div class="mb-3">
+        <label for="fullname" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="fullname" formControlName="fullname"
+          placeholder="Nombre y apellido">
+
+        @if (formLoging.get('fullname')?.invalid && (formLoging.get('fullname')?.dirty ||
+        formLoging.get('fullname')?.touched)) {
+        <div id="fullnameHelp" class="form-text text-danger">Introduzca su nombre y apellido</div>
+        }
+
+        @if (formLoging.get('fullname')?.valid) {
+        <div id="fullnameHelp" class="form-text text-success">✅ nombre valido</div>
+        }
+
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" placeholder="ejemplo@diminio.com">
+
+        @if (formLoging.get('email')?.invalid && (formLoging.get('email')?.dirty ||
+        formLoging.get('email')?.touched)) {
+        <div id="emailHelp" class="form-text text-danger">Introduzca un correo valido.</div>
+        }
+
+        @if (formLoging.get('email')?.valid) {
+          <div id="emailHelp" class="form-text text-success">✅ emali valido.</div>
+        }
+
+      </div>
+
+      <div class="mb-3">
+
+        <label for="message" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="message" formControlName="message" rows="3"
+          placeholder="Introduce un mensaje"></textarea>
+
+        @if (formLoging.get('message')?.invalid && (formLoging.get('message')?.dirty ||
+        formLoging.get('message')?.touched)) {
+        <div id="messageHelp" class="form-text text-danger">Min 5 caracteres</div>
+        }
+
+        @if (formLoging.get('message')?.valid) {
+          <div id="messageHelp" class="form-text text-success">✅ valido.</div>
+        }
+
+      </div>
+      <div class="mb-3">
+        <label for="noRobot" class="form-label">2 + 3 = ?</label>
+        <input type="number" id="noRobot" class="form-control" placeholder="Respuesta" formControlName="noRobot" />
+
+        @if (formLoging.get('noRobot')?.invalid && (formLoging.get('noRobot')?.dirty ||
+        formLoging.get('noRobot')?.touched)) {
+          <div id="noRobotHelp" class="form-text text-danger">Validación anti-span incorrecta.</div>
+        }
+
+        @if (formLoging.get('noRobot')?.valid) {
+          <div id="noRobotHelp" class="form-text text-success">✅ valido.</div>
+        }
+
+      </div>
+      <button [disabled]="formLoging.invalid" type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    @for (item of activeText; track $index) {
+    <p>{{item}}</p>
+    }
+  </div>
+</div>
