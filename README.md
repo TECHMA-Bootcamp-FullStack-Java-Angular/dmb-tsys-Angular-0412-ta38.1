@@ -10,7 +10,7 @@ This repository contains the Bootcamp tasks 👨‍💻
 
 [Click here to see the exercise](https://main.d1yxz28j9mt2ie.amplifyapp.com/)
 
-![image](https://github.com/TECHMA-Bootcamp-FullStack-Java-Angular/dmb-tsys-Angular-0412-ta38/assets/109163247/88bbf85e-67ee-4c12-8a0d-6a6f0d62d917)
+![image](https://raw.githubusercontent.com/TECHMA-Bootcamp-FullStack-Java-Angular/dmb-tsys-Angular-0412-ta38.1/main/src/assets/Captura.png)
 
 ## Rules of use 🤜🏼🤛🏼
 
